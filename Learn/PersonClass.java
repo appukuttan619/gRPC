@@ -1,0 +1,21 @@
+import com.example.protos.PersonProto.Person;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class PersonClass{
+  public static void main(String arg[]){
+    Person shijas = Person.newBuilder()
+                              .setId(123)
+                              .setName("shijas")
+                              .setEmail("shijas002@gmail.com")
+                              .build();
+
+    try {
+        FileOutputStream output = new FileOutputStream(arg[0]);
+        shijas.writeTo(output);
+    } catch (IOException e) {
+        System.err.println("Error writing to file: " + e.getMessage());
+        e.printStackTrace();
+    }
+  }
+}

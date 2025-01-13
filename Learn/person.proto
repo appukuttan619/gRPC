@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "com.example.protos";  // This determines the import path
+option java_outer_classname = "PersonProto";
+
+message Person {
+  optional string name = 1;
+  optional int32 id = 2;
+  optional string email = 3;
+}
